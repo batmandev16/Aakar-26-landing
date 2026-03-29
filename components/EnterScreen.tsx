@@ -36,38 +36,38 @@ export default function EnterScreen({ onEnter }: { onEnter: () => void }) {
       </motion.div>
 
       {/* Cinematic Vignette Overlay */}
-      <div className="absolute inset-0 z-[1] bg-[radial-gradient(circle_at_center,transparent_10%,#000_100%)] pointer-events-none opacity-90" />
+      <div className="absolute inset-0 z-1 bg-[radial-gradient(circle_at_center,transparent_10%,#000_100%)] pointer-events-none opacity-90" />
 
       {/* Epic Central Geometry / Hologram (Disappears on Boom) */}
       <AnimatePresence>
         {!boom && (
           <motion.div
-            className="absolute z-[2] flex items-center justify-center pointer-events-none"
+            className="absolute z-2 flex items-center justify-center pointer-events-none"
             animate={clicked ? { scale: 0, opacity: 0 } : { scale: 1, opacity: 1 }}
             transition={{ duration: 1.5, ease: "anticipate" }}
           >
             {/* Outer Slow Ring */}
             <motion.div
-              className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-full border border-white/5 border-t-white/30"
+              className="absolute w-75 h-75 md:w-150 md:h-150 rounded-full border border-white/5 border-t-white/30"
               animate={{ rotate: 360 }}
               transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
             />
             {/* Mid Ring */}
             <motion.div
-              className="absolute w-[220px] h-[220px] md:w-[450px] md:h-[450px] rounded-full border border-blue-500/10 border-b-cyan-400/50"
+              className="absolute w-55 h-55 md:w-112.5 md:h-112.5 rounded-full border border-blue-500/10 border-b-cyan-400/50"
               animate={{ rotate: -360 }}
               transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
             />
             {/* Inner Fast Ring */}
             <motion.div
-              className="absolute w-[150px] h-[150px] md:w-[300px] md:h-[300px] rounded-full border border-dashed border-white/20"
+              className="absolute w-37.5 h-37.5 md:w-75 md:h-75 rounded-full border border-dashed border-white/20"
               animate={{ rotate: 360 }}
               transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
             />
             
             {/* Core Ethereal Glow */}
             <motion.div
-              className="absolute w-[100px] h-[100px] md:w-[150px] md:h-[150px] rounded-full bg-cyan-500/20 blur-[40px] md:blur-[60px]"
+              className="absolute w-25 h-25 md:w-37.5 md:h-37.5 rounded-full bg-cyan-500/20 blur-2xl md:blur-[60px]"
               animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.7, 0.4] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -77,12 +77,12 @@ export default function EnterScreen({ onEnter }: { onEnter: () => void }) {
 
       {/* Cinematic Letterbox Lines (Top & Bottom borders for a movie feel) */}
       <motion.div 
-        className="absolute top-12 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-[5]"
+        className="absolute top-12 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent z-5"
         animate={clicked ? { opacity: 0 } : { opacity: 1 }}
         transition={{ duration: 1 }}
       />
       <motion.div 
-        className="absolute bottom-12 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-[5]"
+        className="absolute bottom-12 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent z-5"
         animate={clicked ? { opacity: 0 } : { opacity: 1 }}
         transition={{ duration: 1 }}
       />
@@ -93,7 +93,7 @@ export default function EnterScreen({ onEnter }: { onEnter: () => void }) {
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 30, opacity: 1 }}
-            className="absolute z-[50] w-32 h-32 bg-white rounded-full mix-blend-screen pointer-events-none blur-[2px]"
+            className="absolute z-50 w-32 h-32 bg-white rounded-full mix-blend-screen pointer-events-none blur-[2px]"
             transition={{ duration: 0.5, ease: "easeIn" }}
           />
         )}
@@ -105,14 +105,14 @@ export default function EnterScreen({ onEnter }: { onEnter: () => void }) {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="absolute inset-0 z-[100] bg-white pointer-events-none"
+            className="absolute inset-0 z-100 bg-white pointer-events-none"
             transition={{ delay: 0.3, duration: 0.2 }}
           />
         )}
       </AnimatePresence>
 
       {/* UI Content overlay */}
-      <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center pointer-events-none">
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none">
         <AnimatePresence>
           {!clicked && (
             <motion.div
@@ -126,7 +126,7 @@ export default function EnterScreen({ onEnter }: { onEnter: () => void }) {
               <motion.img 
                 src="/aklogo.png" 
                 alt="AAKAR Logo"
-                className="w-[200px] sm:w-[280px] md:w-[500px] object-contain drop-shadow-2xl opacity-90 transition-all duration-700 pointer-events-auto"
+                className="w-50 sm:w-70 md:w-125 object-contain drop-shadow-2xl opacity-90 transition-all duration-700 pointer-events-auto"
                 style={{ filter: "drop-shadow(0 0 24px rgba(255,255,255,0.25))" }}
               />
               
@@ -143,13 +143,13 @@ export default function EnterScreen({ onEnter }: { onEnter: () => void }) {
                   className="group relative px-6 py-3 md:px-12 md:py-5 overflow-hidden rounded-sm bg-white/5 backdrop-blur-md border border-white/10 hover:border-cyan-400/50 transition-all duration-500"
                 >
                   {/* Button Glow on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-linear-to-r from-cyan-500/0 via-cyan-500/10 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   {/* Tech Corners */}
-                  <div className="absolute top-0 left-0 w-3 h-[1px] bg-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                  <div className="absolute top-0 left-0 w-[1px] h-3 bg-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                  <div className="absolute bottom-0 right-0 w-3 h-[1px] bg-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                  <div className="absolute bottom-0 right-0 w-[1px] h-3 bg-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                  <div className="absolute top-0 left-0 w-3 h-px bg-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                  <div className="absolute top-0 left-0 w-px h-3 bg-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                  <div className="absolute bottom-0 right-0 w-3 h-px bg-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                  <div className="absolute bottom-0 right-0 w-px h-3 bg-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300" />
 
                   <span className="relative z-10 tracking-[0.2em] md:tracking-[0.4em] text-[10px] md:text-xs font-semibold uppercase text-gray-300 group-hover:text-white transition-colors duration-300 drop-shadow-md">
                     Initiate Sequence
@@ -183,7 +183,7 @@ export default function EnterScreen({ onEnter }: { onEnter: () => void }) {
                 {[...Array(3)].map((_, i) => (
                   <motion.div
                     key={i}
-                    className="w-12 h-[1px] bg-cyan-200"
+                    className="w-12 h-px bg-cyan-200"
                     initial={{ opacity: 0.1, scaleX: 0 }}
                     animate={{ opacity: [0.1, 1, 0.1], scaleX: [0, 1, 0] }}
                     transition={{

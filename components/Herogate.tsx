@@ -208,7 +208,7 @@ export default function HeroGate() {
       {/* ════════════════════════════════════════════════ SECTION ══ */}
       <section
         ref={sectionRef}
-        className="hero-gate relative w-full h-screen min-h-[600px] overflow-hidden bg-black"
+        className="hero-gate relative w-full h-screen min-h-150 overflow-hidden bg-black"
         style={{ fontFamily: "'Cinzel', serif" }}
       >
 
@@ -302,7 +302,7 @@ export default function HeroGate() {
               width={400}
               height={120}
               priority
-              className="w-[170px] md:w-[240px] h-auto"
+              className="w-42.5 md:w-60 h-auto"
             />
           </motion.div>
 
@@ -409,20 +409,12 @@ export default function HeroGate() {
           {/* Tagline */}
           <motion.div
             className="mt-9 md:mt-12 text-center"
-            style={!isMobile ? { y: taglineY } : undefined}
+            style={
+              !isMobile
+                ? { y: taglineY }
+                : { marginTop: "320px" }
+            }
           >
-            {/* Enter Aakar Button */}
-            <motion.div
-              className="flex justify-center mb-8"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 1 }}
-            >
-              <Link href="/countdown" className="badge-shimmer border border-white/20 uppercase transition-all duration-300 hover:border-white/50" style={{ backdropFilter: "blur(6px)", borderRadius: "2px", color: "rgba(255,255,255,0.85)", textShadow: "0 0 18px rgba(255,180,120,0.5)", fontSize: "12px", letterSpacing: "0.3em", padding: "12px 28px", whiteSpace: "nowrap" }}>
-                Enter Aakar
-              </Link>
-            </motion.div>
-
             <div className="overflow-hidden mb-2">
               {mounted && (
                 <p
@@ -450,6 +442,18 @@ export default function HeroGate() {
                 </p>
               )}
             </div>
+
+            {/* Enter Aakar Button */}
+            <motion.div
+              className="flex justify-center my-6"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 1 }}
+            >
+              <Link href="/countdown" className="badge-shimmer border border-white/20 uppercase transition-all duration-300 hover:border-white/50" style={{ backdropFilter: "blur(6px)", borderRadius: "2px", color: "rgba(255,255,255,0.85)", textShadow: "0 0 18px rgba(255,180,120,0.5)", fontSize: "12px", letterSpacing: "0.3em", padding: "12px 28px", whiteSpace: "nowrap" }}>
+                Enter Aakar
+              </Link>
+            </motion.div>
 
             {/* Japanese subtitle */}
             <motion.p

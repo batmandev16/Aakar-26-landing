@@ -46,19 +46,36 @@ export default function CountdownPage() {
           className="opacity-60"
         />
         {/* Dark Vignette Overlay to make text readable */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80" />
+        <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-black opacity-80" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#000_100%)] opacity-80" />
       </div>
+
+      {/* AJIET Logo */}
+      <motion.div
+        className="absolute top-0 left-0 z-20 px-5 md:px-10 pt-4 pb-3"
+        initial={{ opacity: 0, x: -16 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.15, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <Image
+          src="/aj.png"
+          alt="A J Institute of Engineering & Technology, Mangaluru"
+          width={400}
+          height={120}
+          priority
+          className="w-42.5 md:w-60 h-auto"
+        />
+      </motion.div>
 
       <div className="z-10 flex flex-col items-center justify-center w-full px-4">
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl md:text-6xl font-black uppercase text-center tracking-[0.2em] mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+          className="text-4xl md:text-6xl font-black uppercase text-center tracking-[0.2em] mb-12 text-transparent bg-clip-text bg-linear-to-b from-white to-gray-400 drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]"
           style={{ fontFamily: "'Cinzel', serif" }}
         >
-          Countdown to Aakar
+          Aakar Begins In
         </motion.h1>
 
         {timeLeft ? (
@@ -69,7 +86,7 @@ export default function CountdownPage() {
             className="flex flex-wrap md:flex-nowrap gap-4 md:gap-8 justify-center items-center backdrop-blur-md bg-black/30 p-4 md:p-10 rounded-sm border border-white/20 shadow-[0_0_30px_rgba(255,195,140,0.1)] relative overflow-hidden max-w-[95vw]"
           >
             {/* Subtle inner glow */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-tr from-white/5 to-transparent pointer-events-none" />
             
             {[
               { label: "Days", value: timeLeft.days },
@@ -77,7 +94,7 @@ export default function CountdownPage() {
               { label: "Minutes", value: timeLeft.minutes },
               { label: "Seconds", value: timeLeft.seconds },
             ].map((unit, i) => (
-              <div key={i} className="flex flex-col items-center min-w-[70px] md:min-w-[100px] relative z-10 m-1 md:m-0">
+              <div key={i} className="flex flex-col items-center min-w-17.5 md:min-w-25 relative z-10 m-1 md:m-0">
                 <div className="text-4xl md:text-7xl font-light tracking-tight text-white drop-shadow-[0_0_15px_rgba(255,195,140,0.4)]" style={{ fontFamily: "'Cinzel', serif" }}>
                   {unit.value.toString().padStart(2, "0")}
                 </div>
@@ -88,7 +105,7 @@ export default function CountdownPage() {
             ))}
           </motion.div>
         ) : (
-          <div className="h-[120px] flex items-center justify-center">
+          <div className="h-30 flex items-center justify-center">
             <p className="text-white/70 tracking-[0.4em] uppercase animate-pulse text-sm">Initializing Data...</p>
           </div>
         )}
