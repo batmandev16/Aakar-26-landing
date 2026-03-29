@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "AAKAR - A J Institute of Engineering & Technology, Mangaluru",
-  description: "AAKAR is the annual technical fest of A J Institute of Engineering & Technology, Mangaluru. It is a platform for students to showcase their technical skills and creativity through various events and competitions.",
+  description: "AAKAR is the annual technical fest of A  J Institute of Engineering & Technology, Mangaluru. It is a platform for students to showcase their technical skills and creativity through various events and competitions.",
 };
 
 export default function RootLayout({
