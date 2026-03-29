@@ -383,7 +383,7 @@ export default function HeroGate() {
             {!isMobile ? (
               <motion.div style={{ y: logoY }}>
                 <Image
-                  src="/logo.png"
+                  src="/aklogo.png"
                   alt="AAKAR 2026"
                   width={720}
                   height={275}
@@ -394,7 +394,7 @@ export default function HeroGate() {
               </motion.div>
             ) : (
               <Image
-                src="/logo.png"
+                src="/aklogo.png"
                 alt="AAKAR 2026"
                 width={640}
                 height={245}
