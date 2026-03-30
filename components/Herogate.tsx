@@ -342,8 +342,8 @@ export default function HeroGate() {
             className="flex items-center gap-2 md:gap-4"
             style={{
               transformOrigin: "center",
-              marginBottom: isMobile ? "40px" : "36px",
-              marginTop: isMobile ? "-150px" : "0px",
+              marginBottom: isMobile ? "40px" : "-110px",
+              marginTop: isMobile ? "-150px" : "70px",
             }}
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
