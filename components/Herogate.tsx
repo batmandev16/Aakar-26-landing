@@ -487,13 +487,13 @@ export default function HeroGate() {
             Where Technology Meets Culture
           </span>
 
-          {/* Right — contact */}
+          {/* Right — contact 
           <a
             href="mailto:prajwal@ajiet.edu.in"
             className="contact-link"
           >
             Contact Us
-          </a>
+          </a>*/}
         </motion.div>
 
         {/* ════════════════════════════ SIDE VERTICAL LABELS ══ */}
