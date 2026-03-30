@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourdomain.com"),
+  metadataBase: new URL("https://aakar.live"),
 
   title: {
     default: "AAKAR 2026 | AJIET Techno-Cultural Fest",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "AAKAR 2026 | Enter the Aakar Universe",
     description:
       "The official techno-cultural fest of AJIET. A new era begins. Experience Aakar 2026.",
-    url: "https://yourdomain.com",
+    url: "https://aakar.live",
     siteName: "AAKAR 2026",
     images: [
       {
